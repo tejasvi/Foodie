@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stats
+{% endblock %}
+
+{% block main %}
+{% set gradients = ["255,0,0", "255,51,0", "255,102,0", "255,153,0", "255,204,0", "255,255,0", "204,255,51", "153,255,102", "102,255,153", "51,255,204", "0,255,255"] %}
+<hr/>
+<div class="px-1"><div class="container-fluid px-1 py-2" style="; border-radius:1rem;">
+
+    <form action="/comments" method="post">
+    {% for name in ranking %}
+        <div class="row justify-content-center py-3 px-3">
+            <button name="fname" type="submit" style="background-color:rgba({{ gradients[items[name]] }}, 0.8); color: rgba(0,0,0,1); padding: 2% 0; font-size:2rem" class="btn btn-lg btn-block" value="{{name}}">
+                <b>{{ name }}</b>
+                <span class="badge badge-pill badge-info">
+                    {{ items[name] }}
+                </span>
+            </button>
+        </div>
+    {% endfor %}
+    </form>
+
+</div></div>
+ <hr/>
+{% endblock %}

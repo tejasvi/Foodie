@@ -1,0 +1,60 @@
+input[type="radio"]{
+   display:none;
+}
+
+dim {
+    opacity: 0.1;
+}
+
+.dark {
+    opacity: 1;
+}
+
+.label-item {
+filter: grayscale(100%);
+opacity: 0.5;
+}
+
+.radio-item:checked + label {
+filter: none;
+opacity: 1;
+}
+
+.response {
+    background-color:transparent;
+    color:transparent;
+    border: none;
+}
+.response:focus {
+    background-color:white;
+    color:black;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.size {
+    font-size: 2rem;
+}
+
+
+body, html {
+    height: 100%;
+    overflow-x:hidden;
+}
+
+.bg {
+    height: 100%;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

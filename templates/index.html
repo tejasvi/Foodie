@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Form
+{% endblock %}
+
+{% block main %}
+
+    <form action="/rate" method="post"  id="id" class="px-1" onkeydown="return event.key != 'Enter';" >
+        <div class="container-fluid" style="background-color: rgba(255, 255, 255, 0.7); border-radius:1rem;">
+            <hr/>
+            {% for id, name in items.items() %}
+            <div class="row justify-content-between">
+                <input type="radio" class="radio-item" name="{{ id }}" id="#{{ id }}1" value="-1">
+                <label class="label-item" for="#{{ id }}1">
+                    <div class="col-auto">
+                        <div class="size">
+                            &#129326;
+                        </div>
+                    </div>
+                </label>
+
+                <div class="col text-center">
+                    <label for="#{{ id }}" class="p-0" >
+                        <h3><span>{{ name }}</span></h3>
+                    </label>
+                    <input class="form-control form-control-sm response"  type="text" id="#{{ id }}" autocomplete="off" name="response{{ id }}" class="text-center">
+                </div>
+
+                <input type="radio" class="radio-item" name="{{ id }}" id="#{{ id }}2" value="1">
+                <label class="label-item" for="#{{ id }}2">
+                    <div class="col-auto">
+                        <div class="size">
+                            &#128523;
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <hr/>
+            {% endfor %}
+        </div>
+        <input class="fixed-bottom rounded-0 btn btn-primary btn-lg btn-block" form="id" type="submit" value="Submit">
+    </form>
+
+
+{% endblock %}

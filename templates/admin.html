@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Admin
+{% endblock %}
+
+{% block main %}
+<form action="/admin" method="post">
+    <div class="container pt-5 px-5">
+        <div class="row justify-content-center">
+            <div class="btn-group btn-group-toggle pb-2" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                <input type="radio" name="option" value="query" autocomplete="off"> Query
+                </label>
+                <label class="btn btn-secondary">
+                <input type="radio" name="option" value="execute" autocomplete="off"> Execute
+                </label>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="form-group">
+                <input type="text" name="command" class="form-control" placeholder="Enter SQL command">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <button class="btn rounded-0 btn-primary btn-lg btn-block" type="submit">Execute</button>
+        </div>
+    </div>
+ </form>
+{% endblock %}
